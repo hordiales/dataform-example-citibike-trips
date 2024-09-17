@@ -1,0 +1,21 @@
+-- Can be "view" if you want a view instead of materialized table
+config {
+  type: "table",  
+  schema: "analytics"
+}
+
+-- Join citibike_trips with stations to get the station names
+select
+  trips.tripduration,
+  trips.starttime,
+  trips.stoptime,
+  start_stations.station_name as start_station_name,
+  end_stations.station_name as end_station_name
+from
+  ${ref("citibike_trips")} as trips
+left join
+  ${ref("stations")} as start_stations
+  on trips.start_station_id = start_stations.station_id
+left join
+  ${ref("stations")} as end_stations
+  on trips.end_station_id = end_stations.station_id

@@ -1,0 +1,11 @@
+config {
+  type: "view",
+  schema: "analytics"
+}
+
+-- Select relevant columns from the stations table
+select
+  station_id,
+  name as station_name
+from
+  `bigquery-public-data.new_york_citibike.stations`

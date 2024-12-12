@@ -1,7 +1,7 @@
 -- Can be "view" if you want a view instead of materialized table
 config {
   type: "table",  
-  schema: "analytics"
+  schema: "bike_analytics"
 }
 
 -- Join citibike_trips with stations to get the station names

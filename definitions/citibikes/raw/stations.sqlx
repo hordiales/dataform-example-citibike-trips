@@ -1,6 +1,7 @@
 config {
   type: "view",
   schema: "bike_analytics"
+  //name: "stations"
 }
 
 -- Select relevant columns from the stations table

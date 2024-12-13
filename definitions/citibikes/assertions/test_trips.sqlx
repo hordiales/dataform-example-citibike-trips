@@ -1,0 +1,12 @@
+config {
+    type:"assertion",
+    //schema:
+    name: "test_trips"
+}
+
+SELECT 
+    *
+FROM
+    ${ref("stations")}
+WHERE
+    station_id IS NULL

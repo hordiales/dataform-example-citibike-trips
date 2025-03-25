@@ -6,7 +6,8 @@ config {
 
 -- Join citibike_trips with stations to get the station names
 select
-  trips.tripduration,
+  --trips.tripduration,
+  COALESCE(trips.tripduration,0), -- devuelve el primer valor no nulo de la lista
   trips.starttime,
   trips.stoptime,
   start_stations.station_name as start_station_name,

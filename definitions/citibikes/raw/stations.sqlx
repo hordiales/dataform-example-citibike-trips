@@ -1,0 +1,21 @@
+config {
+  type: "view",
+  schema: "bike_analytics",
+  name: "stations",
+  assertions: {
+    uniqueKey: ["station_id"],
+    nonNull: ["station_id", "station_name"],
+    rowConditions: [
+      "station_name NOT IN ('unknown', 'Unknown', '')"
+    ]
+  }
+}
+
+-- Assertions: alternativa. Archivo aparte con SELECT que no devuelva registros
+
+-- Select relevant columns from the stations table
+select
+  station_id,
+  name as station_name
+from
+  `bigquery-public-data.new_york_citibike.citibike_stations`

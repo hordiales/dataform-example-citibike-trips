@@ -1,6 +1,7 @@
 config {
   type: "view",
-  schema: "bike_analytics"
+  schema: "bike_analytics",
+  
 }
 
 -- Select relevant columns from the citibike_trips table

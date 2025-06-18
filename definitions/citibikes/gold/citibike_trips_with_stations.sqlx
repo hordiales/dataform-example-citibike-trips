@@ -3,21 +3,23 @@ config {
   type: "table",  
   schema: "citibikes_gold"
 }
+-- Tabla "gold" o reporting
 -- de esta tabla va a consumir el tablero
 
 -- Join citibike_trips with stations to get the station names
 select
-  --trips.tripduration,
+  trips.tripduration,
   COALESCE(trips.tripduration,0), -- devuelve el primer valor no nulo de la lista
   trips.starttime,
   trips.stoptime,
-  start_stations.station_name as start_station_name,
-  end_stations.station_name as end_station_name
+  --start_stations.station_name as start_station_name,
+  --end_stations.station_name as end_station_name
 from
   ${ref("trips")} as trips
-left join
-  ${ref("stations")} as start_stations
-  on trips.start_station_id = start_stations.station_id
-left join
-  ${ref("stations")} as end_stations
-  on trips.end_station_id = end_stations.station_id
+-- left join
+--   ${ref("stations")} as start_stations
+--WARNING trips es INT y stations es STRING
+--   on trips.start_station_id = start_stations.station_id
+-- left join
+--   ${ref("stations")} as end_stations
+--   on trips.end_station_id = end_stations.station_id

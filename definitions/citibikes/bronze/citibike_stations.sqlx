@@ -2,7 +2,7 @@ config {
   //type: "declaration",
     //type: "table", //copia los datos
   type: "view", //siempre recupera los datos del origen, por eso es una vista
-  schema: "citibikes_raw",
+  schema: "citibikes_bronze",
   name: "citibike_stations"
 }
 -- Es la tabla original, la que esta en el dataset público de BigQuery

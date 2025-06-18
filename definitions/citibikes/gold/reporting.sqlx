@@ -1,1 +1,28 @@
+-- Can be "view" if you want a view instead of materialized table
+config {
+  type: "table",  
+  schema: "citibikes_gold"
+}
 -- selección de kpi / métricas
+
+-- Tabla "gold" o reporting
+-- de esta tabla va a consumir el tablero
+
+
+--5. What is the average trip length each month?
+
+SELECT
+  EXTRACT(month FROM starttime) AS month,
+   AVG(tripduration)/60 AS avg_duration_in_minutes #SUM(tripduration)/(60*COUNT(*))
+FROM
+  ${ref("trips")} as trips
+-- WHERE 
+--    EXTRACT(year
+--   FROM
+--     starttime) = 2017
+GROUP BY
+  month
+HAVING 
+  month is NOT NULL
+ORDER BY
+  month

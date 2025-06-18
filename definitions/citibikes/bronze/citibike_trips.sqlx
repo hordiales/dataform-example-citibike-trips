@@ -1,6 +1,6 @@
 config {
   type: "view",
-  schema: "citibikes_raw",
+  schema: "citibikes_bronze",
 }
 
 -- Esta una copia literal de la tabla original (la ingesta)

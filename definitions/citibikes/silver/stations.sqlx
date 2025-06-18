@@ -11,6 +11,8 @@ config {
   }
 }
 
+-- Capa silver o stagging (stg)
+
 -- Assertions: alternativa. Archivo aparte con SELECT que no devuelva registros
 
 -- Select relevant columns from the stations table
@@ -20,4 +22,3 @@ select
   --latitude longitude (geo type)
 from
     ${ref("citibike_stations")}
-  --`bigquery-public-data.new_york_citibike.citibike_stations`

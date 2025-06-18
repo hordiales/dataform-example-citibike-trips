@@ -13,4 +13,5 @@ select
 from
     ${ref("citibike_trips")}
 where
-  starttime >= '2022-01-01'  -- Filter for trips from 2022 onwards
+  --starttime >= '2022-01-01'  -- Filter for trips from 2022 onwards. --> No dataa
+  starttime >= '2017-01-01'  -- Filter for trips from 2022 onwards

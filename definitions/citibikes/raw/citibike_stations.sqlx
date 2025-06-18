@@ -1,0 +1,16 @@
+config {
+  //type: "declaration",
+    //type: "table", //copia los datos
+  type: "view", //siempre recupera los datos del origen, por eso es una vista
+  schema: "citibikes_raw",
+  name: "citibike_stations"
+}
+-- Es la tabla original, la que esta en el dataset público de BigQuery
+-- si ya estuviera ingestada en el DW, seria type "declaration"
+
+
+-- Esta una copia literal de la tabla original (la ingesta)
+select
+    *
+from
+    `bigquery-public-data.new_york_citibike.citibike_stations`

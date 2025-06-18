@@ -1,6 +1,6 @@
 config {
   type: "view",
-  schema: "bike_analytics",
+  schema: "citibikes_silver",
   name: "stations",
   assertions: {
     uniqueKey: ["station_id"],
@@ -15,7 +15,9 @@ config {
 
 -- Select relevant columns from the stations table
 select
-  station_id,
-  name as station_name
+  station_id as station_id,-- AS ID,
+  name as station_name,
+  --latitude longitude (geo type)
 from
-  `bigquery-public-data.new_york_citibike.citibike_stations`
+    ${ref("citibike_stations")}
+  --`bigquery-public-data.new_york_citibike.citibike_stations`

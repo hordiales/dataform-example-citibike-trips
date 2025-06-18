@@ -1,5 +1,5 @@
 defaultProject: diplobigdata-443820
 defaultLocation: US
-defaultDataset: dataform
+defaultDataset: diplo_biketrips
 defaultAssertionDataset: dataform_assertions
 dataformCoreVersion: 3.0.0

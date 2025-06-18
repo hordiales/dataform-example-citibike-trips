@@ -1,17 +1,10 @@
 config {
   type: "view",
-  schema: "bike_analytics",
-  
+  schema: "citibikes_raw",
 }
 
--- Select relevant columns from the citibike_trips table
+-- Esta una copia literal de la tabla original (la ingesta)
 select
-  tripduration,
-  start_station_id,
-  end_station_id,
-  starttime,
-  stoptime
+  * 
 from
   `bigquery-public-data.new_york_citibike.citibike_trips`
-where
-  starttime >= '2022-01-01'  -- Filter for trips from 2022 onwards
